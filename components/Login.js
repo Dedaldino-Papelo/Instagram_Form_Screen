@@ -3,8 +3,12 @@ import { globalStyle } from "../global/style";
 import CustomButtom from "./CustomButtom";
 import { FormInput } from "./FormInput";
 
-export default function Login(){
+export default function Login({navigation}){
 
+    const HandleSubmit = () => {
+        navigation.navigate('Sign up')
+    }
+    
     return (
         <View style={[globalStyle.container, style.LoginForm]}>
             <View style={style.Header}>
@@ -29,6 +33,7 @@ export default function Login(){
 
             <View style={style.Footer}>
                 <CustomButtom
+                    onPress={HandleSubmit}
                     text='Criar nova conta' 
                 />
             </View>

@@ -13,8 +13,8 @@ export default function App() {
     <View style={globalStyle.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name='Login' component={Login} />
-          <Stack.Screen name='Register' component={Register} />
+          <Stack.Screen name='Sign in' options={{title: ''}} component={Login} />
+          <Stack.Screen name='Sign up' options={{title: ''}}  component={Register} />
         </Stack.Navigator>
       </NavigationContainer>
     </View>
