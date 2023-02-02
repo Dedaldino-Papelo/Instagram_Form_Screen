@@ -6,7 +6,7 @@ import { FormInput } from "./FormInput";
 export default function Login({navigation}){
 
     const HandleSubmit = () => {
-        navigation.navigate('Sign up')
+        navigation.navigate('Signupphone')
     }
     
     return (

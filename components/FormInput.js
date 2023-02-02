@@ -14,7 +14,7 @@ export const FormInput = ({placeholder}) => {
 const style = StyleSheet.create({
     TextInput: {
         borderWidth: 1,
-        borderColor: '#111',
+        borderColor: '#aaa',
         marginBottom: 12,
         backgroundColor: "#fff",
         padding: 12,

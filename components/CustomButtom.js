@@ -28,8 +28,8 @@ const style = StyleSheet.create({
     },
     Button1: {
         borderWidth: 1,
-        borderColor: "#Adadae",
-        padding: 10
+        borderColor: "#aaa",
+        paddingVertical: 10
     },
     TextButton1: {
         fontSize: 18,

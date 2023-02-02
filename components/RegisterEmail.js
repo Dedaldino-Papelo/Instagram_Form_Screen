@@ -3,18 +3,22 @@ import { globalStyle } from "../global/style";
 import CustomButtom from "./CustomButtom";
 import { FormInput } from "./FormInput";
 
-export default function Register(){
+export default function RegisterEmail({navigation}) {
+
+        const HandleSubmit = () => {
+            navigation.goBack()
+        }
+
     return(
         <View style={[globalStyle.container, style.registerForm]}>
             <View>
-                <Text style={style.title}>Qual é o número do seu Celular?</Text>
-                <Text style={style.subtitle}>Insira o Número do seu Celular para contacto ninguém verá essa informação no seu perfil</Text>
+                <Text style={style.title}>Qual é o número do seu email?</Text>
+                <Text style={style.subtitle}>Insira o email do seu Celular para contacto ninguém verá essa informação no seu perfil</Text>
 
                 <View style={style.form}>
                     <FormInput
-                        placeholder='Número do Celular' 
+                        placeholder='email' 
                     />
-                    <Text>Você poderá receber notificações por SMS para fins de segurança e login</Text>
                 </View>
                 
                 <CustomButtom
@@ -22,7 +26,8 @@ export default function Register(){
                      text='Avançar' 
                 />
                 <CustomButtom 
-                     text='Cadastrar-se com email' 
+                     text='Cadastrar-se com o número...' 
+                     onPress={HandleSubmit}
                 />
             </View>
             <Text style={style.Footer}>Já tem uma conta</Text>
@@ -47,6 +52,6 @@ const style = StyleSheet.create({
         textAlign: "center"
     },
     form: {
-        marginVertical: 30
+        marginVertical: 20
     }
 })
