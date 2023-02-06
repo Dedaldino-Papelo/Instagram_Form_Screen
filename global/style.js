@@ -5,5 +5,8 @@ export const globalStyle = StyleSheet.create({
         flex: 1,
         backgroundColor: '#F0faff',
         padding: 10,
+    },
+    text: {
+        fontFamily: 'Roboto-Regular'
     }
 })

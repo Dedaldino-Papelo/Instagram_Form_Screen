@@ -12,7 +12,7 @@ export default function Login({navigation}){
     return (
         <View style={[globalStyle.container, style.LoginForm]}>
             <View style={style.Header}>
-                <Text style={style.TextHeader}>Português(Brasil)</Text>
+                <Text style={globalStyle.text}>Português(Brasil)</Text>
                 <Image style={style.image} source={require('../assets/instagram48.png')}/>
             </View>
 
@@ -28,7 +28,7 @@ export default function Login({navigation}){
                     text='Entrar'
                     type='standard'
                 />
-                    <Text style={style.forgotSenha}>Esqueceu a Senha?</Text>
+                    <Text style={[globalStyle.text,style.forgotSenha]}>Esqueceu a Senha?</Text>
             </View>
 
             <View style={style.Footer}>
@@ -55,5 +55,5 @@ const style = StyleSheet.create({
         textAlign: "center",
         fontWeight: "bold",
         fontSize: 18,
-    },
+    }
 })
