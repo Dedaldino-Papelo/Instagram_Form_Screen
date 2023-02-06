@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { useEffect } from 'react';
 import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen'
+import Home from './components/Home';
 
 const Stack = createStackNavigator()
 
@@ -33,15 +34,18 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
+      initialRouteName='Home'
         screenOptions={{
           headerStyle: {
             backgroundColor: "#F0faff"
-          }
+          },
+          
         }}
       >
         <Stack.Screen name='Signin' options={{ title: '' }} component={Login} />
         <Stack.Screen name='Signupphone' options={{ title: '' }} component={RegisterPhone} />
         <Stack.Screen name='Signupemail' options={{ title: '' }} component={RegisterEmail} />
+        <Stack.Screen name ='Home' options={{title: ''}} component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

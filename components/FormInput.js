@@ -1,11 +1,13 @@
 import { View, TextInput, StyleSheet } from "react-native"
 
-export const FormInput = ({placeholder}) => {
+export const FormInput = ({placeholder,handleChange, textType}) => {
     return(
         <View>
             <TextInput 
                  style={style.TextInput}
                  placeholder={placeholder}
+                 onChangeText={handleChange}
+                 secureTextEntry={textType === 'paswd' ? true : false}
             />
         </View>
     )
