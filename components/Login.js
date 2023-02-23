@@ -35,37 +35,37 @@ export default function Login({navigation}){
     }
     
     return (
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-            <ScrollView>
-            <View style={[globalStyle.container, style.LoginForm]}>
-                <View style={style.Header}>
-                    <Text style={style.TextHeader}>Português(Brasil)</Text>
-                    <Image style={style.image} source={require('../assets/instagram48.png')}/>
-                </View>
+        <View style={[globalStyle.container, style.LoginForm]}>
+                    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+                    <ScrollView>
+                        <View style={style.Header}>
+                            <Text style={style.TextHeader}>Português(Brasil)</Text>
+                            <Image style={style.image} source={require('../assets/instagram48.png')}/>
+                        </View>
 
-                <View style={style.bodyForm}>
-                    <FormInput 
-                        placeholder="Nome de Usuário" 
-                    />
-                    <FormInput 
-                        placeholder="Senha"
-                        
-                    />
-                    <CustomButtom
-                        text='Entrar'
-                        type='standard'
-                    />
-                        <Text style={style.forgotSenha}>Esqueceu a Senha?</Text>
-                </View>
-                <View style={style.Footer}>
-                    <CustomButtom
-                        onPress={HandleSubmit}
-                        text='Criar nova conta' 
-                    />
-                </View>
-            </View>
-        </ScrollView>
-    </KeyboardAvoidingView>
+                        <View style={style.bodyForm}>
+                            <FormInput 
+                                placeholder="Nome de Usuário" 
+                            />
+                            <FormInput 
+                                placeholder="Senha"
+                                
+                            />
+                            <CustomButtom
+                                text='Entrar'
+                                type='standard'
+                            />
+                                <Text style={style.forgotSenha}>Esqueceu a Senha?</Text>
+                        </View>
+                        <View style={style.Footer}>
+                            <CustomButtom
+                                onPress={HandleSubmit}
+                                text='Criar nova conta' 
+                            />
+                        </View>
+                </ScrollView>
+            </KeyboardAvoidingView>
+        </View>
     )
 }
 

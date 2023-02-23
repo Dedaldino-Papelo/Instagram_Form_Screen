@@ -10,32 +10,32 @@ export default function RegisterEmail({navigation}) {
         }
 
     return(
-        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-            <ScrollView>
-                <View style={[globalStyle.container, style.registerForm]}>
-                    <View>
-                        <Text style={style.title}>Qual é o número do seu email?</Text>
-                        <Text style={style.subtitle}>Insira o email do seu Celular para contacto ninguém verá essa informação no seu perfil</Text>
+            <View style={[globalStyle.container, style.registerForm]}>
+                    <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+                    <ScrollView>
+                            <View>
+                                <Text style={style.title}>Qual é o número do seu email?</Text>
+                                <Text style={style.subtitle}>Insira o email do seu Celular para contacto ninguém verá essa informação no seu perfil</Text>
 
-                        <View style={style.form}>
-                            <FormInput
-                                placeholder='email' 
-                            />
-                        </View>
-                        
-                        <CustomButtom
-                            type='standard'
-                            text='Avançar' 
-                        />
-                        <CustomButtom 
-                            text='Cadastrar-se com o número...' 
-                            onPress={HandleSubmit}
-                        />
-                    </View>
-                    <Text style={style.Footer}>Já tem uma conta</Text>
-                </View>
-            </ScrollView>
-        </KeyboardAvoidingView>
+                                <View style={style.form}>
+                                    <FormInput
+                                        placeholder='email' 
+                                    />
+                                </View>
+                                
+                                <CustomButtom
+                                    type='standard'
+                                    text='Avançar' 
+                                />
+                                <CustomButtom 
+                                    text='Cadastrar-se com o número...' 
+                                    onPress={HandleSubmit}
+                                />
+                            </View>
+                            <Text style={style.Footer}>Já tem uma conta</Text>
+                    </ScrollView>
+                </KeyboardAvoidingView>
+        </View>
     )
 }
 
