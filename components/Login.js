@@ -1,12 +1,37 @@
 import { Image, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useState } from "react";
 import { globalStyle } from "../global/style";
 import CustomButtom from "./CustomButtom";
 import { FormInput } from "./FormInput";
 
 export default function Login({navigation}){
 
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    //Go to Signup page
     const HandleSubmit = () => {
         navigation.navigate('Signupphone')
+    }
+
+    //on Enter submit
+    const onSubmit = async () => {
+        try {
+            await AsyncStorage.setItem('Username', username)
+            navigation.navigate('Home')
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    //Handle username the text input from the form
+    const HandleUser = (value) => {
+        setUsername(value)
+    }
+    //Handle password the text input from the form
+    const HandlePass = (value) => {
+        setPassword(value)
     }
     
     return (
@@ -32,7 +57,6 @@ export default function Login({navigation}){
                     />
                         <Text style={style.forgotSenha}>Esqueceu a Senha?</Text>
                 </View>
-
                 <View style={style.Footer}>
                     <CustomButtom
                         onPress={HandleSubmit}
