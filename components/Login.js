@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, View } from "react-native";
 import { globalStyle } from "../global/style";
 import CustomButtom from "./CustomButtom";
 import { FormInput } from "./FormInput";
@@ -10,50 +10,57 @@ export default function Login({navigation}){
     }
     
     return (
-        <View style={[globalStyle.container, style.LoginForm]}>
-            <View style={style.Header}>
-                <Text style={style.TextHeader}>Português(Brasil)</Text>
-                <Image style={style.image} source={require('../assets/instagram48.png')}/>
-            </View>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+            <ScrollView>
+            <View style={[globalStyle.container, style.LoginForm]}>
+                <View style={style.Header}>
+                    <Text style={style.TextHeader}>Português(Brasil)</Text>
+                    <Image style={style.image} source={require('../assets/instagram48.png')}/>
+                </View>
 
-            <View style={style.bodyForm}>
-                <FormInput 
-                      placeholder="Nome de Usuário" 
-                />
-                <FormInput 
-                      placeholder="Senha"
-                       
-                />
-                <CustomButtom
-                    text='Entrar'
-                    type='standard'
-                />
-                    <Text style={style.forgotSenha}>Esqueceu a Senha?</Text>
-            </View>
+                <View style={style.bodyForm}>
+                    <FormInput 
+                        placeholder="Nome de Usuário" 
+                    />
+                    <FormInput 
+                        placeholder="Senha"
+                        
+                    />
+                    <CustomButtom
+                        text='Entrar'
+                        type='standard'
+                    />
+                        <Text style={style.forgotSenha}>Esqueceu a Senha?</Text>
+                </View>
 
-            <View style={style.Footer}>
-                <CustomButtom
-                    onPress={HandleSubmit}
-                    text='Criar nova conta' 
-                />
+                <View style={style.Footer}>
+                    <CustomButtom
+                        onPress={HandleSubmit}
+                        text='Criar nova conta' 
+                    />
+                </View>
             </View>
-        </View>
+        </ScrollView>
+    </KeyboardAvoidingView>
     )
 }
 
 const style = StyleSheet.create({
     LoginForm: {
-        justifyContent: "space-around"
+        justifyContent: "space-between"
     },
     Header: {
         alignItems: "center",
     },
     image: {
-        marginTop: 50
+        marginVertical: 50
     },
     forgotSenha: {
         textAlign: "center",
         fontWeight: "bold",
         fontSize: 18,
     },
+    Footer: {
+        marginTop: 30
+    }
 })
